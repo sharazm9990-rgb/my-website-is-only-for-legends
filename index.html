@@ -240,5 +240,123 @@ a:hover {
   text-shadow: 0 0 10px red;
 }
 </style>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Legend Hacker</title>
+
+<style>
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  font-family: monospace;
+}
+
+/* CENTER TEXT */
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* MAIN TEXT STYLE */
+.legend-text {
+  font-size: 40px;
+  letter-spacing: 10px; /* SPACE BETWEEN LETTERS */
+  animation: colorShift 2s infinite alternate;
+  text-shadow: 0 0 20px red;
+}
+
+/* COLOR ANIMATION */
+@keyframes colorShift {
+  0% {
+    color: red;
+    text-shadow: 0 0 10px red, 0 0 20px red;
+  }
+  100% {
+    color: darkred;
+    text-shadow: 0 0 5px darkred, 0 0 15px darkred;
+  }
+}
+
+/* LIGHTNING BACKGROUND */
+.lightning {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,0,0,0.15), transparent 70%);
+  animation: flash 4s infinite;
+}
+
+@keyframes flash {
+  0%, 95%, 100% { opacity: 0; }
+  96% { opacity: 1; }
+}
+
+/* GLITCH EFFECT */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+
+.glitch::before {
+  color: #ff0000;
+  animation: glitchTop 1s infinite;
+}
+
+.glitch::after {
+  color: #8b0000;
+  animation: glitchBottom 1.5s infinite;
+}
+
+@keyframes glitchTop {
+  0% { clip-path: inset(0 0 80% 0); }
+  50% { clip-path: inset(0 0 10% 0); }
+  100% { clip-path: inset(0 0 80% 0); }
+}
+
+@keyframes glitchBottom {
+  0% { clip-path: inset(80% 0 0 0); }
+  50% { clip-path: inset(10% 0 0 0); }
+  100% { clip-path: inset(80% 0 0 0); }
+}
+
+/* TERMINAL BAR */
+.terminal {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  color: red;
+  padding: 10px;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="lightning"></div>
+
+<div class="center-text">
+  <h1 class="legend-text glitch" data-text="FOR LEGENDS ONLY">
+    F O R&nbsp;&nbsp;L E G E N D S&nbsp;&nbsp;O N L Y
+  </h1>
+</div>
+
+<div class="terminal">
+  <p>> initializing system...</p>
+  <p>> bypassing firewall...</p>
+  <p>> access granted</p>
+</div>
 </body>
 </html>
