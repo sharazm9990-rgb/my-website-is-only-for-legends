@@ -148,7 +148,14 @@ body {
 }
 </style>
   <h1 id="typing"></h1>
-
+<script>
+window.addEventListener("load", function() {
+  const text = document.querySelector('.center-text');
+  if (text) {
+    text.remove(); // pura element delete
+  }
+});
+</script>
 <script>
 const text = "ACCESS GRANTED... WELCOME LEGEND";
 let i = 0;
@@ -170,6 +177,14 @@ type();
   font-family: monospace;
   text-shadow: 0 0 10px red;
 }
+  <script>
+window.addEventListener("load", function() {
+  const text = document.querySelector('.center-text');
+  if (text) {
+    text.remove(); // pura element delete
+  }
+});
+</script>
 </style>
   <h1 class="glitch" data-text="FOR LEGENDS ONLY">FOR LEGENDS ONLY</h1>
 
