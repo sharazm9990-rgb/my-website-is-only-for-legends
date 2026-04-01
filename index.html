@@ -358,5 +358,33 @@ body {
   <p>> bypassing firewall...</p>
   <p>> access granted</p>
 </div>
+  <button onclick="toggleText()" class="btn">TOGGLE ACCESS</button>
+
+<script>
+function toggleText() {
+  const text = document.querySelector('.center-text');
+  
+  if (text.style.display === "none") {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+</script>
+
+<style>
+.btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: red;
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: monospace;
+  box-shadow: 0 0 10px red;
+}
+</style>
 </body>
 </html>
