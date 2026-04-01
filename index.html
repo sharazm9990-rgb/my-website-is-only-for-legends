@@ -121,5 +121,124 @@
 
     setInterval(draw, 33);
   </script>
+  <div class="lightning"></div>
+
+<style>
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+}
+
+.lightning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,0,0,0.2) 10%, transparent 70%);
+  animation: flash 3s infinite;
+}
+
+@keyframes flash {
+  0%, 95%, 100% { opacity: 0; }
+  96% { opacity: 1; }
+  97% { opacity: 0.4; }
+}
+</style>
+  <h1 id="typing"></h1>
+
+<script>
+const text = "ACCESS GRANTED... WELCOME LEGEND";
+let i = 0;
+
+function type() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 50);
+  }
+}
+
+type();
+</script>
+
+<style>
+#typing {
+  color: red;
+  font-family: monospace;
+  text-shadow: 0 0 10px red;
+}
+</style>
+  <h1 class="glitch" data-text="FOR LEGENDS ONLY">FOR LEGENDS ONLY</h1>
+
+<style>
+.glitch {
+  color: red;
+  font-size: 50px;
+  position: relative;
+  font-family: monospace;
+}
+
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+
+.glitch::before {
+  color: #ff0000;
+  animation: glitchTop 1s infinite;
+}
+
+.glitch::after {
+  color: #ff4d4d;
+  animation: glitchBottom 1.5s infinite;
+}
+
+@keyframes glitchTop {
+  0% { clip-path: inset(0 0 80% 0); }
+  50% { clip-path: inset(0 0 10% 0); }
+  100% { clip-path: inset(0 0 80% 0); }
+}
+
+@keyframes glitchBottom {
+  0% { clip-path: inset(80% 0 0 0); }
+  50% { clip-path: inset(10% 0 0 0); }
+  100% { clip-path: inset(80% 0 0 0); }
+}
+</style>
+  <div class="terminal">
+  <p>> initializing system...</p>
+  <p>> bypassing firewall...</p>
+  <p>> access granted</p>
+</div>
+
+<style>
+.terminal {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  color: red;
+  font-family: monospace;
+  padding: 10px;
+  font-size: 14px;
+}
+</style>
+  <style>
+body {
+  cursor: crosshair;
+}
+
+* {
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 10px red;
+}
+</style>
 </body>
 </html>
