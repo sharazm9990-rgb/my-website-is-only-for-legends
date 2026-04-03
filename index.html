@@ -400,6 +400,75 @@ function toggleText() {
   font-family: monospace;
   box-shadow: 0 0 10px red;
 }
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Legends Site</title>
+
+  <style>
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+
+    .videos {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    iframe {
+      width: 80%;
+      height: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px red;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      background: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background: darkred;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Welcome Legends 🔥</h1>
+
+<button onclick="showVideos()">Click to Unlock</button>
+
+<div class="videos" id="videoSection">
+
+  <!-- Video 1 -->
+  <iframe src="https://www.youtube.com/embed/VIDEO_ID1"></iframe>
+
+  <!-- Video 2 -->
+  <iframe src="https://www.youtube.com/embed/VIDEO_ID2"></iframe>
+
+  <!-- Video 3 -->
+  <iframe src="https://www.youtube.com/embed/VIDEO_ID3"></iframe>
+
+</div>
+
+<script>
+  function showVideos() {
+    document.getElementById("videoSection").style.display = "flex";
+  }
+</script>
 </style>
 </body>
 </html>
